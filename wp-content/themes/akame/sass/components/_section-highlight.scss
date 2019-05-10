@@ -1,0 +1,14 @@
+.section-highlight {
+  background-color: $light-blue;
+  text-align: left;
+  padding: $vertical-space--min 0;
+
+  @include breakpoint($bp-big) {
+    padding: $vertical-space 0;
+  }
+
+  &--alt {
+    margin-top: 2rem;
+    padding-top: 2rem;
+  }
+}

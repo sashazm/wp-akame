@@ -1,0 +1,11 @@
+.section__border {
+  border-bottom: 2px solid $gray;
+  margin: 6rem auto;
+
+  &--start {
+    margin: 1rem auto 6rem;
+  }
+  &--end {
+    margin: 2rem 0;
+  }
+}

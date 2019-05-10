@@ -1,0 +1,92 @@
+.menu {
+  //  Styling menu and menu--alt (part of '_our-work').
+  // To change positioning of Main Navigation go to it's parent component '_header-main'
+
+  // Shared settings
+  @include reset-list();
+  // display: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    // Button overrides for '_our work'
+    background: none;
+    border: 0;
+
+    @include breakpoint($bp-nav-big) {
+      padding: .5em .75em;
+    }
+
+    &:hover {
+      border-bottom: 2px solid $black;
+    }
+  }
+
+  &--active {
+    // Mobile
+    border-bottom: 2px solid $brand-color;
+  }
+
+  &--push {
+    @include breakpoint($bp-nav-big) {
+      padding-right: 1em;
+    }
+  }
+
+  // Main menu overrides
+  &--main {
+    background-color: #ebebeb;
+    display: block;
+
+    @include breakpoint($bp-nav-big) {
+      display: flex;
+      justify-content: flex-end;
+      align-content: center;
+      background-color: initial;
+    }
+
+    .menu__link {
+      color: $black;
+      padding: .5rem 0 .5rem 1rem;
+      border-bottom: 1px solid rgba(191, 169, 90, 0.3);
+
+      @include breakpoint($bp-nav-big) {
+        border-bottom: initial;
+        padding: .5em .75em;
+      }
+
+      &:hover {
+        background-color: rgba(191, 169, 90, 0.3);
+        color: $black;
+        border-bottom: 1px solid $brand-color;
+      }
+    }
+
+    .menu--active {
+      background-color: rgba(191, 169, 90, 0.3);
+      border-bottom: 1px solid $brand-color;
+
+      @include breakpoint($bp-nav-big) {
+        background-color: initial;
+      }
+    }
+  }
+
+  // Alternative menu for non-main menus
+  &--alt {
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.5);
+
+    .menu__link:hover {
+      border-color: $brand-color;
+    }
+
+    .menu--active {
+      color: $brand-color;
+    }
+  }
+}

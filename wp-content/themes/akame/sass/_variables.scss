@@ -1,0 +1,29 @@
+// Typography
+$font-family--serif: "Playfair Display", serif;
+$font-family--sans-serif: "Open Sans", sans-serif;
+// Colors
+$dark-black: #000;
+$black: #252525;
+$white: #fff;
+$brand-color: #bda859;
+$gray: #ebebeb;
+$dark-gray: #a8a8a8;
+
+// Drop Caps styling (first letter of the paragraph)
+$darkest-gray: #575656;
+// Alternative section styling
+$light-blue: #f5f9fa;
+// Layout
+$vertical-space: 4rem;
+$vertical-space--min: 3rem;
+$container: 90vw;
+$container--big: 84vw;
+
+// Breakpoints
+$bp-max: 1500px;
+$bp-big: 1000px;
+$bp-large: 800px;
+$bp-medium: 600px;
+$bp-small: 450px;
+$bp-min: 320px;
+$bp-nav-big: 1344px;

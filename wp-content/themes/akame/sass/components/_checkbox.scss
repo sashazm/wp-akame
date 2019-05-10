@@ -1,0 +1,25 @@
+$check-box--size: .9rem;
+
+.checkbox {
+  border: 1.5px solid $brand-color;
+  width: $check-box--size;
+  height: $check-box--size;
+  margin-right: 1em;
+  border-radius: 15%;
+}
+
+.checkbox__check {
+  font-weight: 600;
+  color: $brand-color;
+
+  &::before {
+    display: block;
+    margin-top: -3px;
+    margin-left: 1px;
+    text-shadow: 1px 1px 0 $white;
+  }
+
+  &--alt {
+    text-shadow: 1px 1px 0 $light-blue;
+  }
+}

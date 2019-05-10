@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+// Fluid Typography.
+$min_width: 320px;
+$max_width: 1800px;
+$min_font: 16px;
+$max_font: 20px;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+body {
+  font-family: $font-family--sans-serif;
+  font-weight: 100;
+  color: #000;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-family--serif;
+  font-weight: 100;
+  line-height: 1.3;
+  margin: .5em 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.43rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+strong {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+button {
+  font-family: $font-family--sans-serif;
+  line-height: 1.6;
+  outline: 0;
+}
+
+a {
+  color: $brand-color;
+}
+
+blockquote {
+  border-left: 5px solid $brand-color;
+  margin: 1.5em 0;
+  padding: 0.5em 12px;
+  font-weight: 600;
+  font-size: 1.2em;
+  font-family: $font-family--serif;
+}
+
+.l-container {
+  width: $container;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint($bp-big) {
+    width: $container--big;
+  }
+}
+
+// Don't set left/right margin, to 0, this will override l-container settings.
+.l-vertical-space {
+  margin-top: $vertical-space--min;
+  margin-bottom: $vertical-space--min;
+
+  @include breakpoint($bp-big) {
+    margin-top: $vertical-space;
+    margin-bottom: $vertical-space;
+  }
+}
+
+.l-3col-max {
+  display: grid;
+
+  @include breakpoint($bp-medium) {
+    grid-gap: 2rem;
+  }
+
+  @include breakpoint($bp-medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint($bp-big) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.u-centered {
+  text-align: center;
+}
+
+//  Hide only visually, but have it available for screen readers:
+//  https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+//  1. For long content, line feeds are not interpreted as spaces and small width
+//     causes content to wrap 1 word per line:
+//     https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+
+.u-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; // 1
+}

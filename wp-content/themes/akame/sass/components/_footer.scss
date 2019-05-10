@@ -1,0 +1,42 @@
+.footer {
+  @include breakpoint($bp-medium) {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "copyright copyright"
+    "opening-times contact";
+  }
+
+  @include breakpoint($bp-big) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "copyright opening-times contact";
+  }
+}
+
+// Separation between titles and text
+.footer__title {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  @include breakpoint($bp-medium) {
+    margin-top: 0;
+  }
+}
+
+.footer__copyright {
+  grid-area: copyright;
+}
+
+.footer__opening-times {
+  grid-area: opening-times;
+
+  @include breakpoint($bp-big) {
+    justify-self: center;
+  }
+}
+
+.footer__contact {
+  grid-area: contact;
+  justify-self: center;
+}

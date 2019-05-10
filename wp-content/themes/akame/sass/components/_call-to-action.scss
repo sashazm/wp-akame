@@ -1,0 +1,44 @@
+$call-to-action-full-opacity: 1300px !default;
+
+.call-to-action {
+  position: relative;
+  background-image: url("../images/photos/cta.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 4rem 0;
+
+  @include breakpoint($bp-medium) {
+    background-position: right;
+    background-size: contain;
+  }
+
+  &:after {
+    @include color-mask(rgba(255, 255, 255, 0.8));
+
+    @include breakpoint($call-to-action-full-opacity) {
+      display: none;
+    }
+  }
+
+  &__body {
+    // Ensure that the body sits on top of the opaque background in mobile.
+    position: relative;
+    z-index: 1;
+  }
+
+  &__text {
+    @include breakpoint($bp-large) {
+      max-width: 60%;
+    }
+
+    @include breakpoint($bp-big) {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__button {
+    margin: 0 1rem 1.5rem 0;
+  }
+}

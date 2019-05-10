@@ -1,0 +1,5 @@
+name: wp-akame
+recipe: wordpress
+config:
+  webroot: .
+  xdebug: true

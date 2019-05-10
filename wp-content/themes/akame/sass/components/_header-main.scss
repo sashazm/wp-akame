@@ -1,0 +1,82 @@
+.header-main {
+  padding: 1em 0;
+
+  @include breakpoint($bp-nav-big) {
+    padding: 2em 0;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-areas: "logo toggle";
+
+    @include breakpoint($bp-nav-big) {
+      grid-template-areas: "logo navigation";
+      grid-template-columns: 1fr 7fr;
+      align-items: center;
+    }
+  }
+
+  &__nav {
+    // Mobile
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: -100%; // Pulls off canvas to the left.
+    height: 100vh;
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: 320px;
+    overflow: hidden scroll;
+    background-color: #fffefa;
+    transition: left .5s;
+
+    @include breakpoint($bp-nav-big) {
+      grid-area: navigation;
+      grid-template-columns: 7fr 5em 1fr;
+      grid-template-rows: min-content;
+      overflow: hidden;
+      align-items: center;
+      //overrides
+      position: initial;
+      z-index: 1;
+      width: initial;
+      height: initial;
+      background-color: $white;
+
+    }
+
+    &--active {
+      left: 0; // Push back onto canvas.
+    }
+  }
+
+  // Positioning end styling
+  &__cart {
+    // Mobile
+    grid-row: 2; // when toggle is present
+    justify-self: start;
+    padding: 0 0 1rem 20px;
+    color: $black;
+
+    @include breakpoint($bp-nav-big) {
+      justify-self: center;
+      padding: 0;
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  &__booking {
+    // Mobile
+    justify-self: center;
+    padding-top: 2rem;
+    grid-row: 4; // when toggle is present
+
+    @include breakpoint($bp-nav-big) {
+      justify-self: end;
+      grid-row: 1;
+      grid-column: 3;
+      padding: 0;
+    }
+  }
+}

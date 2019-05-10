@@ -1,0 +1,32 @@
+.blogpost {
+
+  &__link {
+    @include title-link;
+    display: inline-block;
+    margin: 1rem 0;
+  }
+
+  &__byline {
+    @include byline-link;
+  }
+
+  &__pipe {
+    margin: 0 1em;
+  }
+
+  &__text {
+    margin-bottom: 5rem;
+
+    @include breakpoint($bp-medium) {
+      margin-bottom: 3rem;
+    }
+
+    &--last {
+      margin-bottom: 1rem;
+
+      @include breakpoint($bp-medium) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

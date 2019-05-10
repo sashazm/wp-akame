@@ -1,0 +1,25 @@
+.services {
+  display: grid;
+
+  @include breakpoint($bp-medium) {
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+
+  @include breakpoint($bp-big) {
+    grid-template: auto / repeat(4, 1fr);
+    grid-gap: 3%;
+  }
+
+  &__box {
+    border: 2px solid $gray;
+    margin-bottom: 1rem;
+    padding: 2.5em 2em;
+    text-align: center;
+
+    @include breakpoint($bp-medium) {
+      margin-bottom: 0;
+      padding: 3.5em 2em;
+    }
+  }
+}

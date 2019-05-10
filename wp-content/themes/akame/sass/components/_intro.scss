@@ -1,0 +1,128 @@
+// Color
+$intro-overlay: rgba(191, 169, 90, 0.135) !default;
+// Typography
+$intro-overlay-font: 2em !default;
+$intro-overlay-font--medium: 2.5em !default;
+//Breakpoints
+$intro-bp-3col: 1200px !default;
+
+
+// Grid container
+.intro {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-areas:
+    "title"
+    "image"
+    "text";
+
+  // Small to medium screen size
+  @include breakpoint($bp-medium) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title image"
+      "text text";
+    align-items: center;
+    padding-top: 1.5rem;
+  }
+
+  // Medium to big screen size
+  @include breakpoint($intro-bp-3col) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "title image text";
+    padding-top: 1.5rem;
+  }
+}
+
+// Title area overlap
+.intro__overlap {
+  grid-area: title;
+  display: grid;
+  align-items: center;
+}
+
+// Moves overlap <h1> and <p> to the front
+.intro__front {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+// Settings for the front <h1>
+.front__title {
+  font-size: $intro-overlay-font;
+  line-height: 1;
+
+  //Medium to big screen settings
+  @include breakpoint($bp-medium) {
+    font-size: $intro-overlay-font--medium;
+    line-height: .8;
+    margin: .4em 0;
+  }
+}
+
+// Settins for back overlap text
+.intro__back {
+  // Settings for font size and style of back overlap
+  color: $intro-overlay;
+  font-family: $font-family--serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3.2em;
+  // Moves overlap text to the back
+  grid-row: 1;
+  grid-column: 1;
+  z-index: -1;
+
+  // Settings for small to medium screen size
+  @include breakpoint($bp-small) {
+    line-height: 1;
+    font-size: 4rem;
+  }
+
+  // Settings for medium to big screen size
+  @include breakpoint($bp-medium) {
+    font-size: 5rem;
+  }
+}
+
+// Image area
+.intro__image {
+  grid-area: image;
+  align-self: center;
+  justify-self: center;
+  box-shadow: 0 0 5em rgba($black, .3);
+}
+
+// Text area
+.intro__textbox {
+  grid-area: text;
+  // Settings for small to medium screen size
+  @include breakpoint($bp-medium) {
+    grid-column: span 2;
+    grid-row: 2;
+  }
+
+  // Settings for medium to big screen size
+  @include breakpoint($intro-bp-3col) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+// Text area <h1> styling
+.intro__title {
+  @include breakpoint($intro-bp-3col) {
+    font-size: 1.5rem;
+    margin-top: -.5em;
+  }
+}
+
+// Text area <p> styling
+.intro__text {
+  margin-bottom: 3rem;
+  // Settings for medium to big screen size
+  @include breakpoint($intro-bp-3col) {
+    margin-bottom: 2.5em;
+  }
+}

@@ -1,0 +1,12 @@
+$image-circle__size: 60px !default;
+
+.image-circle {
+  width: $image-circle__size;
+  height: $image-circle__size;
+  display: inline-block;
+  text-align: center;
+  color: $white;
+  border-radius: 50%;
+  line-height: $image-circle__size;
+  margin: 1em .3em;
+}

@@ -1,0 +1,40 @@
+.comment-form {
+  margin: 3rem 0;
+  border: 1px solid $dark-gray;
+  padding: 1rem;
+
+  @include breakpoint($bp-small) {
+    padding: 2rem;
+
+  }
+
+  @include breakpoint($bp-medium) {
+    padding: 2rem;
+    margin-top: 5rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+
+    @include breakpoint($bp-small) {
+      font-size: 2rem;
+    }
+  }
+
+  &__button {
+    margin-top: 1rem;
+    font-size: .8rem;
+
+    @include breakpoint($bp-small) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.form-field {
+  @include form-field;
+
+  &--tall {
+    height: 8rem;
+  }
+}
