@@ -73,6 +73,8 @@ function akame_blocks_cgb_block_assets() { // phpcs:ignore
 			'editor_style'  => 'akame_blocks-cgb-block-editor-css',
 		)
 	);
+// Registering a dynamic block that displays latest blog posts;
+	require_once 'test-dyn/index.php';
 }
 
 // Hook: Block assets.
