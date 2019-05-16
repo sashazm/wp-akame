@@ -20,13 +20,5 @@
     @include breakpoint($bp-medium) {
       margin-bottom: 3rem;
     }
-
-    &--last {
-      margin-bottom: 1rem;
-
-      @include breakpoint($bp-medium) {
-        margin-bottom: 2rem;
-      }
-    }
   }
 }

@@ -27,9 +27,9 @@ const { RichText } = wp.editor;
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'akame-blocks/test-dyn', {
+registerBlockType( 'akame-blocks/latest-blogposts', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( ' test-dyn ' ), // Block title.
+	title: __( ' Akame recent blogposts ' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	description: __( 'Block to generate Latest News component' ),
@@ -58,7 +58,7 @@ registerBlockType( 'akame-blocks/test-dyn', {
 
 		return [
 			<div className={className}>
-				<p>Test Block</p>
+				<p>This block will automatically display three of the most recent blogposts, give a title for the section and a short intro.</p>
 
 				{/* Title and text for the section starts here */}
 				<RichText

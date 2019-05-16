@@ -24,7 +24,7 @@ function akame_test_dyn_callback($attributes, $content) {
           <a href="{$post_url}" class="blogpost__link"><h3>{$post['post_title']}</h3></a>
           <div>
             <a href="{$post_url}" class="blogpost__byline"><i class="far fa-clock" data-fa-transform="flip-h"></i> {$date}</a>
-            <a href="{$post_url}#comments" class="blogpost__byline" title="Read the Comments"><span class="blogpost__pipe">|</span> <i class="far fa-comments"></i> 10</a>
+            <a href="{$post_url}#comments" class="blogpost__byline" title="Read the Comments"><span class="blogpost__pipe">|</span> <i class="far fa-comments"></i> {$post["comment_count"]}</a>
           </div>
           <p class="blogpost__text">{$post['post_excerpt']}</p>
         </div>
@@ -54,7 +54,7 @@ HTML;
   return $output;
 }
 
-register_block_type('akame-blocks/test-dyn', [
+register_block_type('akame-blocks/latest-blogposts', [
   // Register the attributes in PHP so that our callback function
   // is aware of them.
   'attributes' => [

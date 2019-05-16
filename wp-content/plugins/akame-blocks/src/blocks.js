@@ -16,4 +16,5 @@ import './teaser-block/block.js';
 import './homepage-services/block.js';
 import './why-choose/block.js';
 import './portfolio-block/block.js';
-import './test-dyn/block.js';
+import './latest-blogposts/block.js';
+import './call-to-action/block.js';

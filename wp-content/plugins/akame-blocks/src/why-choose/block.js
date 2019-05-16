@@ -147,7 +147,7 @@ registerBlockType( 'akame-blocks/why-choose', {
 					/>
 				</div>
 
-			</div>,
+			</div>
 		];
 	},
 

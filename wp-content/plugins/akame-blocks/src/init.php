@@ -74,7 +74,7 @@ function akame_blocks_cgb_block_assets() { // phpcs:ignore
 		)
 	);
 // Registering a dynamic block that displays latest blog posts;
-	require_once 'test-dyn/index.php';
+	require_once 'latest-blogposts/index.php';
 }
 
 // Hook: Block assets.
