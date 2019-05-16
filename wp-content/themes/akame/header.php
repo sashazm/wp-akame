@@ -73,7 +73,8 @@
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
-						'container_class' => 'header-main__nav',
+						'menu_class' => 'menu menu--main menu--push',
+						'container' => false,
 						'walker' => $myWalker
 					) );
 

@@ -183,7 +183,11 @@ function business_info() {
 	// Tell Wordpress that a new business_hours and phone_number option is available on the
 	// general settings page.
 	register_setting( 'general', 'business_hours' );
+	register_setting( 'general', 'weekend_hours' );
 	register_setting( 'general', 'phone_number' );
+	register_setting( 'general', 'contact_name' );
+	register_setting( 'general', 'contact_email' );
+	register_setting( 'general', 'business_location' );
 
 		// Add the field for the new setting on the general settings page.
 		add_settings_field(
@@ -192,11 +196,39 @@ function business_info() {
 			'business_hours_callback',
 			'general',
 		);
+		add_settings_field(
+			'weekend_hours',
+			'Weekends opening schedule',
+			'weekend_hours_callback',
+			'general',
+		);
 
 		add_settings_field(
 			'phone_number',
 			'Phone number',
 			'phone_number_callback',
+			'general',
+		);
+
+		add_settings_field(
+			'contact_name',
+			'Name for the customer service contact info',
+			'contact_name_callback',
+			'general',
+		);
+
+
+		add_settings_field(
+			'contact_email',
+			'Contact E-mail',
+			'contact_email_callback',
+			'general',
+		);
+
+		add_settings_field(
+			'business_location',
+			'Mailing address',
+			'business_location_callback',
 			'general',
 		);
 };
@@ -210,10 +242,40 @@ function business_hours_callback() {
 };
 
 //  Callback function that creates custom field for admin settings
+function weekend_hours_callback() {
+	$options = get_option('weekend_hours');
+
+	echo '<input type="text" name="weekend_hours" value="' . $options . '"></input>';
+};
+
+//  Callback function that creates custom field for admin settings
 function phone_number_callback($options) {
 	$options = get_option('phone_number');
 
 	echo '<input type="text" name="phone_number" value="' . $options . '"></input>';
+};
+
+// contact name
+//  Callback function that creates custom field for admin settings
+function contact_name_callback($options) {
+	$options = get_option('contact_name');
+
+	echo '<input type="text" name="contact_name" value="' . $options . '"></input>';
+};
+
+
+//  Callback function that creates custom field for admin settings
+function contact_email_callback($options) {
+	$options = get_option('contact_email');
+
+	echo '<input type="text" name="contact_email" value="' . $options . '"></input>';
+};
+
+// address
+function business_location_callback($options) {
+	$options = get_option('business_location');
+
+	echo '<input type="text" name="business_location" value="' . $options . '"></input>';
 };
 
 
@@ -257,3 +319,15 @@ function cta_booking_url_callback($args) {
 
 	echo '<input type="text" name="cta_booking" value="' . $options . '"></input>';
 };
+
+/* Changes the class on the custom logo in the header.php
+*/
+add_filter( 'get_custom_logo', 'change_header_logo_class' );
+
+
+function change_header_logo_class( $html ) {
+
+    $html = str_replace( 'custom-logo', 'header-main__logo', $html );
+
+    return $html;
+}
