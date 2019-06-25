@@ -101,8 +101,8 @@ registerBlockType( 'akame-blocks/call-to-action', {
 		// // save(): built-in function renders the site markup of the block
 	save ({ attributes, className, setAttributes }) {
 		return (
-			<section class="section-highlight call-to-action">
-				<div class="l-container call-to-action__body">
+			<section className="section-highlight call-to-action">
+				<div className="l-container call-to-action__body">
 					{/* Title and text for the section starts here */}
 					<InnerBlocks.Content />
 

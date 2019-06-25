@@ -91,9 +91,9 @@ registerBlockType( 'akame-blocks/homepage-banner', {
 	 */
 	save ({ attributes, className, setAttributes }) {
 		return (
-			<section class="welcome-banner">
-				<div class="l-container">
-					<div class="welcome-banner__container">
+			<section className="welcome-banner">
+				<div className="l-container">
+					<div className="welcome-banner__container">
 						<InnerBlocks.Content />
 						<RichText.Content
 							tagName ='a'

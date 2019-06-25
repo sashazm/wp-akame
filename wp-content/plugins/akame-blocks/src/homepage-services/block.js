@@ -124,9 +124,9 @@ registerBlockType( 'akame-blocks/homepage-services', {
 		const { attributes } = props;
 		return (
 			<section>
-				<div class="l-container">
+				<div className="l-container">
 					<header>
-						<div class="l-vertical-space u-centered">
+						<div className="l-vertical-space u-centered">
 							<RichText.Content
 								tagName = { 'h1' }
 								value = { attributes.sectionTitle }
@@ -137,7 +137,7 @@ registerBlockType( 'akame-blocks/homepage-services', {
 							/>
 						</div>
 					</header>
-					<div class="services">
+					<div className="services">
 						<InnerBlocks.Content/>
 					</div>
 				</div>

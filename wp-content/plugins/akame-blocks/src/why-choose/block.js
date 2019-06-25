@@ -155,15 +155,15 @@ registerBlockType( 'akame-blocks/why-choose', {
 	save ({ attributes, className, setAttributes }) {
 
 		const createListMarkup = (list) => {
-			return list.replace(/<li>(?!<i)/g, '<li><i class="fas fa-check checkbox checkbox__check checkbox__check--alt"></i>');
+			return list.replace(/<li>(?!<i)/g, '<li><i className="fas fa-check checkbox checkbox__check checkbox__check--alt"></i>');
 		}
 
 		return (
-			<section class="l-vertical-space section-highlight">
-				<div class="l-container why-choose">
+			<section className="l-vertical-space section-highlight">
+				<div className="l-container why-choose">
 					{/* Section Image */}
 					<div>
-						<img class="why-choose__image" src={attributes.imgUrl}/>
+						<img className="why-choose__image" src={attributes.imgUrl}/>
 					</div>
 
 					{/* Title and text for the section starts here */}
